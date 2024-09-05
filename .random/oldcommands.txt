@@ -1,0 +1,37 @@
+#old commands in non slash
+
+#@bot.command(aliases=['hi'])
+#async def hello(ctx):
+    #await ctx.send(f'hiiiiiiii {ctx.author.mention} :3 ')
+
+#@bot.command()
+#async def fortune(ctx):
+   #responses = ['Outlook bad.',
+                 # 'No.',
+                 # 'Negative.',
+                 # 'My signs point to no.',
+                 # 'Nope.',
+                 # 'Never.',
+                 # "No, I'm sorry.",
+                 # 'Maybe.']
+    #response = ['you will die alone', 'you have no friends', 'you will have a bald spot by 25', 'you will never please a woman', 'you have a small cock']
+    #await ctx.send(f'{random.choice(response)}')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ if want to make dm messaging work again :D
+@app_commands.allowed_installs(guilds=True, users=True)
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
