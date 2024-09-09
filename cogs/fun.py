@@ -1,3 +1,5 @@
+from http.client import responses
+
 import discord
 import random
 from discord import app_commands
@@ -17,10 +19,14 @@ class Fun(commands.Cog):
         await interaction.response.send_message(f'hiiiiiiii {interaction.user.mention} :3 ')
 
     @app_commands.command(name='fortune', description='tells your honest fortune')
-    async def fortune(self, interaction: discord.Interaction):
+    async def fortune(self, interaction: discord.Interaction, member: discord.Member = None):
+        if member is None:
+            member = interaction.user
+
         response = ['you will die alone', 'you have no friends', 'you will have a bald spot by 25',
-                    'you will never please a woman', 'you have a small cock']
-        await interaction.response.send_message(f"{random.choice(response)}")
+                    'you will never please a woman', 'you have a small cock', 'you like men', 'you like women'
+                    'you like men and women', 'you will find a gf/bf soon <3', 'Your Balls Will Explode On October 13th, 2037']
+        await interaction.response.send_message(f'{member.mention}, {random.choice(response)}')
 
     @app_commands.command(name='gay', description='gay check')
     async def gay(self, interaction: discord.Interaction, member: discord.Member = None):
